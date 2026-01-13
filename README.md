@@ -3,7 +3,7 @@ This repository documents the setup and deployment of a **3-tier web application
 
 ---
 
-## 🧰 Tech Stack
+##  Tech Stack
 
 * **Frontend:** Node.js, npm, Apache
 * **Backend:** Java 17, Maven, Spring Boot
@@ -15,7 +15,7 @@ Database (RDS) --> Backend --> Frontend
 ```
 ---
 
-## 🗄️ Database Setup (AWS RDS)
+##  Database Setup (AWS RDS)
 
 1. Go to **Amazon RDS → Create database**.
 2. Choose:
@@ -39,7 +39,7 @@ DB_NAME = student_db
 ```
 ---
 
-## ☁️ EC2 Instance Setup
+##  EC2 Instance Setup
 
 1. Launch EC2 (Amazon Linux / Ubuntu)
 2. Configure:
@@ -88,7 +88,7 @@ git clone <Link to Clone EasyCRUD Repo>
 
 ---
 
-## 🧩 Backend Docker Setup (Spring Boot)
+##  Backend Docker Setup (Spring Boot)
 
 ### Recommended Base Image
 
@@ -129,7 +129,7 @@ EXPOSE 8080
 CMD ["java","-jar","student-regis-0.0.1-SNAPSHOT.jar"]
 ```
 
-> 📌 Use the JAR name from your `pom.xml` (`artifactId`).
+>  Use the JAR name from your `pom.xml` (`artifactId`).
 
 ### Build & Run Backend Container
 
@@ -139,11 +139,11 @@ docker run -d -p 8080:8080 backend:v1
 docker ps
 ```
 
-✅ Backend application is now portable and running in a container.
+ Backend application is now portable and running in a container.
 
 ---
 
-## 🎨 Frontend Docker Setup
+##  Frontend Docker Setup
 
 ### Environment Configuration
 
@@ -187,7 +187,7 @@ docker ps
 
 ---
 
-## 🧹 Maintenance Notes
+##  Maintenance Notes
 
 * Always remove old images before rebuilding:
 
@@ -205,17 +205,17 @@ docker stop <container-id>
 
 ---
 
-## ✅ Final Result
+##  Final Result
 
 * Frontend accessible via **EC2 Public IP** on port **80**
 * Backend running on port **8080**
 * Database managed securely via **AWS RDS**
 
-🎉 Your **3-tier application is fully containerized and portable!**
+ Your **3-tier application is fully containerized and portable!**
 
 ---
 
-## 📌 Notes
+##  Notes
 
 * Keep backend and frontend in separate Dockerfiles
 * Prefer prebuilt images (Maven, Node Alpine) for efficiency

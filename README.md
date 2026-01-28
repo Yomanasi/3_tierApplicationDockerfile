@@ -128,6 +128,16 @@ EXPOSE 8080
 
 CMD ["java","-jar","student-regis-0.0.1-SNAPSHOT.jar"]
 ```
+'''
+FROM maven:3.8.5-openjdk-17
+COPY . /opt/
+WORKDIR /opt
+RUN rm -rf src/main/resources/application.properties
+RUN cp -r application.properties src/main/resources/
+RUN mvn clean package
+WORKDIR target/
+CMD ["java","-jar","student-registration-backend-0.0.1-SNAPSHOT.jar"]
+'''
 
 >  Use the JAR name from your `pom.xml` (`artifactId`).
 
